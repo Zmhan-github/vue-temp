@@ -60,7 +60,7 @@ export default {
     selectNextHead() {
       this.selectHeadIndex =
         getNextValidIndex(
-          this.selectHeadIndex, 
+          this.selectHeadIndex,
           avalibleParts.heads.length,
         );
     },
@@ -76,7 +76,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 .part {
   position: relative;
   width:165px;

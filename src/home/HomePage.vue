@@ -4,7 +4,7 @@
       <img  class="robot" src="../assets/robot-home.png" alt="">
     </div>
     <div class="get-started">
-      <a href="#">{{name}}</a>
+      <router-link to="/build">GET started</router-link>
     </div>
   </div>
 </template>
