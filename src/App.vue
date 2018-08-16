@@ -1,19 +1,11 @@
 <template>
-  <div id="app">
+  <div id="app" :style="isLoggedStyle">
     <header>
-      <nav>
-        <ul>
-          <li class="nav-item">
-            <router-link class="nav-link" :to="{name: 'Home'}" exact >
-              <img class="logo" src="./assets/logo.png">
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" :to="{name: 'Build'}" exact >
-               Войти
-            </router-link>
-          </li>
-        </ul>
+      <nav v-if="isLogged">
+        <UserHeader />
+      </nav>
+      <nav v-else>
+        <HomeHeader />
       </nav>
     </header>
     <main>
@@ -23,8 +15,30 @@
 </template>
 
 <script>
+import HomeHeader from './home/HomeHeader.vue';
+import UserHeader from './profile/UserHeader.vue';
+
 export default {
   name: 'app',
+  components: {
+    HomeHeader,
+    UserHeader,
+  },
+  data() {
+    return {
+      isLogged: true
+    };
+  },
+  computed: {
+    changeStyle() {
+      this.isLogged = !this.isLogged;
+    },
+    isLoggedStyle() {
+      return {
+        background: this.isLogged ? 'white' : '',
+      };
+    },
+  },
 };
 </script>
 
@@ -37,11 +51,6 @@ html, body {
   height: 100%;
   width: 100%;
 }
-body {
-  background: url("./assets/bg.jpg") no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
 </style>
 
 <style scoped>
@@ -51,32 +60,13 @@ body {
   height: 600px;
   min-height: 100vh;
   margin: 0rem auto;
+  background: url("./assets/bg.jpg") no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 main {
   position: relative;
   padding: 30px;
   min-height: 450px;
-}
-ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-}
-.nav-item {
-  display: inline-block;
-  padding: 5px 40px;
-  font-size: 22px;
-}
-.logo {
-  vertical-align: middle;
-  height: 35px;
-}
-.nav-link {
-  text-decoration: none;
-  color: inherit;
-}
-.router-link-active {
-  color: white;
 }
 </style>

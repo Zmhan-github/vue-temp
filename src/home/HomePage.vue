@@ -4,8 +4,8 @@
       <h1 class="home__slogan-text">Eдиный аккаунт для всех сервисов otau</h1>
       <!-- <img  class="robot" src="../assets/robot-home.png" alt=""> -->
     </div>
-    <div class="home__started">
-      <router-link to="/build">GET started</router-link>
+    <div @click="isLogged" class="home__started">
+      <router-link to="/profile">GET started</router-link>
     </div>
   </div>
 </template>
@@ -13,8 +13,12 @@
 <script>
 export default {
   name: 'HomePage',
-  props: {
-    msg: String,
+  methods: {
+    isLogged() {
+      console.log("clicked");
+      // генерируем событие 'remove' и передаём id элемента
+      this.$emit('logged');
+    }
   },
 };
 </script>
