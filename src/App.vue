@@ -2,10 +2,10 @@
   <div id="app" :style="isLoggedStyle">
     <header>
       <nav v-if="isLogged">
-        <UserHeader />
+        <UserHeader @logged="isLoggedChange"/>
       </nav>
       <nav v-else>
-        <HomeHeader />
+        <HomeHeader/>
       </nav>
     </header>
     <main>
@@ -27,12 +27,22 @@ export default {
   data() {
     return {
       isLogged: false,
+      token: localStorage.getItem('token'),
     };
   },
   methods: {
     isLoggedChange() {
       this.isLogged = !this.isLogged;
     },
+    fetchIt() {
+      if (this.token) {
+        this.isLogged = !this.isLogged;
+        this.$router.push('/profile');
+      }
+    },
+  },
+  created() {
+    this.fetchIt();
   },
   computed: {
     isLoggedStyle() {

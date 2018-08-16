@@ -5,7 +5,7 @@
     </div>
     <div class="home__started">
       <router-link class="nav-link" :to="{name: 'Profile'}" exact >
-        <p @click="isLogged">Вход</p>
+        <p @click="isLogged">Залогинился</p>
       </router-link>
     </div>
   </div>
@@ -16,7 +16,7 @@ export default {
   name: 'HomePage',
   methods: {
     isLogged() {
-      console.log('clicked');
+      localStorage.setItem('token', 'token');
       this.$emit('logged');
     },
   },

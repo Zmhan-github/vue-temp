@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'UserProfile',
+  name: 'ProfilePage',
 };
 </script>
 
