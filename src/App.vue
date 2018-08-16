@@ -9,7 +9,7 @@
       </nav>
     </header>
     <main>
-      <router-view />
+      <router-view @logged="isLoggedChange"/>
     </main>
   </div>
 </template>
@@ -26,13 +26,15 @@ export default {
   },
   data() {
     return {
-      isLogged: true
+      isLogged: false,
     };
   },
-  computed: {
-    changeStyle() {
+  methods: {
+    isLoggedChange() {
       this.isLogged = !this.isLogged;
     },
+  },
+  computed: {
     isLoggedStyle() {
       return {
         background: this.isLogged ? 'white' : '',

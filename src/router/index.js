@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import HomePage from '../home/HomePage.vue';
+// import LoginPage from '../login/LoginPage.vue';
 import RobotBuilder from '../build/RobotBuilder.vue';
 import UserProfile from '../profile/UserProfile.vue';
 
@@ -11,7 +12,7 @@ export default new Router({
   mode: 'history',
   routes: [{
     path: '/',
-    name: 'Home',
+    name: 'HomePage',
     component: HomePage,
   }, {
     path: '/build',

@@ -6,10 +6,10 @@
       </router-link>
     </li>
     <li class="nav-item">
-       <router-link class="nav-link" :to="{name: 'Build'}" exact >
+       <router-link class="nav-link" :to="{name: 'Profile'}" exact >
           Сервисы
       </router-link>
-      <router-link class="nav-link" :to="{name: 'Home'}" exact >
+      <router-link class="nav-link" :to="{name: 'Profile'}" exact >
           Айсулу
       </router-link>
     </li>
@@ -18,9 +18,9 @@
 
 
 <script>
-  export default {
-    name: "UserHeader",
-  }
+export default {
+  name: 'UserHeader',
+};
 </script>
 
 

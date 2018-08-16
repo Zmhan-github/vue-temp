@@ -2,10 +2,11 @@
   <div class="home">
     <div class="home__slogan">
       <h1 class="home__slogan-text">Eдиный аккаунт для всех сервисов otau</h1>
-      <!-- <img  class="robot" src="../assets/robot-home.png" alt=""> -->
     </div>
-    <div @click="isLogged" class="home__started">
-      <router-link to="/profile">GET started</router-link>
+    <div class="home__started">
+      <router-link class="nav-link" :to="{name: 'Profile'}" exact >
+        <p @click="isLogged">Вход</p>
+      </router-link>
     </div>
   </div>
 </template>
@@ -15,10 +16,9 @@ export default {
   name: 'HomePage',
   methods: {
     isLogged() {
-      console.log("clicked");
-      // генерируем событие 'remove' и передаём id элемента
+      console.log('clicked');
       this.$emit('logged');
-    }
+    },
   },
 };
 </script>
