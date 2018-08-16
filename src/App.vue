@@ -5,13 +5,12 @@
         <ul>
           <li class="nav-item">
             <router-link class="nav-link" :to="{name: 'Home'}" exact >
-              <img class="logo" src="./assets/build-a-bot-logo.png">
-              Build-a-Bot
+              <img class="logo" src="./assets/logo.png">
             </router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" :to="{name: 'Build'}" exact >
-              Build
+               Войти
             </router-link>
           </li>
         </ul>
@@ -30,15 +29,27 @@ export default {
 </script>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
 body {
-  background: linear-gradient(to bottom, #555, #999);
+  background: url("./assets/bg.jpg") no-repeat;
   background-attachment: fixed;
+  background-size: cover;
 }
 </style>
 
 <style scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  max-width: 192rem;
+  min-height: 100vh;
+  margin: 0rem auto;
 }
 main {
   margin: 0 auto;
@@ -46,24 +57,20 @@ main {
   background-color: white;
   min-height: 300px;
 }
-header {
-  background-color: #999;
-  width: 1084px;
-  margin: 0 auto;
-}
 ul {
-  padding: 3px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
 }
 .nav-item {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 5px 40px;
   font-size: 22px;
-  border-right: 1px solid #bbb;
 }
 .logo {
   vertical-align: middle;
-  height: 30px;
+  height: 35px;
 }
 .nav-link {
   text-decoration: none;
