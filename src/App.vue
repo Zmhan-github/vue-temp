@@ -46,16 +46,16 @@ body {
 
 <style scoped>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
   max-width: 192rem;
+  height: 600px;
   min-height: 100vh;
   margin: 0rem auto;
 }
 main {
-  margin: 0 auto;
+  position: relative;
   padding: 30px;
-  background-color: white;
-  min-height: 300px;
+  min-height: 450px;
 }
 ul {
   display: flex;
