@@ -1,4 +1,5 @@
 <template>
+<nav>
   <ul>
     <li class="nav-item">
       <router-link class="nav-link" :to="{name: 'Home'}" exact >
@@ -6,6 +7,7 @@
       </router-link>
     </li>
   </ul>
+</nav>
 </template>
 
 <script>

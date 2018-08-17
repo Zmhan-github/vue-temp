@@ -1,12 +1,10 @@
 <template>
   <div id="app" :style="isLoggedStyle">
-    <header>
-      <nav v-if="isLogged">
-        <UserHeader @logged="isLoggedChange"/>
-      </nav>
-      <nav v-else>
-        <HomeHeader/>
-      </nav>
+    <header v-if="isLogged">
+      <ProfilePageHeader @logged="isLoggedChange"/>
+    </header>
+    <header v-else>
+      <HomeHeader/>
     </header>
     <main>
       <router-view @logged="isLoggedChange"/>
@@ -16,13 +14,13 @@
 
 <script>
 import HomeHeader from './home/HomeHeader.vue';
-import UserHeader from './profile/UserHeader.vue';
+import ProfilePageHeader from './profile/ProfilePageHeader.vue';
 
 export default {
   name: 'app',
   components: {
     HomeHeader,
-    UserHeader,
+    ProfilePageHeader,
   },
   data() {
     return {
@@ -63,7 +61,7 @@ export default {
   --color-primary-dark   : #c6c6c6;
 
   --color-grey-light-1: #faf9f9;
-  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-2: #f4f2f2; /*+*/
   --color-grey-light-3: #f0eeee;
   --color-grey-light-4: #ccc;
 
@@ -98,6 +96,19 @@ html {
   font-size: 62.5%; /* 1rem = 10px; 10px/16px = 62.5%; */
 }
 
+.center {
+  border: var(--line);
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 @font-face {
   font-family: 'Lato-Light';
   src: url('./assets/fonts/Lato-Light.eot'); /* IE9 Compat Modes */
@@ -128,7 +139,8 @@ html {
 }
 main {
   position: relative;
-  padding: 30px;
   min-height: 450px;
+  max-height: 90vh;
+  height: calc(100% - 70px);
 }
 </style>

@@ -14,12 +14,24 @@ export default {
 
 <style lang="scss" scoped>
 .content {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+
   .sidebar {
-    color: tomato;
-    width: 330px;
+    background-color: var(--color-grey-dark-1);
+    flex: 0 1 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
+
   .main {
-    color: aqua;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
   }
 }
 
